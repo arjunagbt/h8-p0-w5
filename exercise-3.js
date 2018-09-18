@@ -1,27 +1,40 @@
-function highestScore (students) {
-    
-    var output = {}
+function highestScore(students) {
 
-    for (let i = 0; i < students.length; i++) {
-        
-        if(students[i].class == output[students[i].class] ){
-
-            if(students[i].score >= output[students[i].class].score){
-                output[students[i].class].name = students[i].name
-                output[students[i].class].score = students[i].score
-            }
-
-        }else{
-            output[students[i].class] = {
-                name : students[i].name,
-                score : students[i].score
-            }
+    var output = {
+  
+    }   //var menampung output
+  
+  
+  
+  
+    for (let i = 0; i < students.length; i++) {  //periksa array input 1 1
+  
+  
+  
+  
+      if (Object.keys(output).includes(students[i].class)) {  //apabila terdapat Key di object output yang sama dengan class object input yang sedang di periksa
+  
+        if (students[i].score >= output[students[i].class].score) {  //override data bila score lebih besar
+          output[students[i].class].name = students[i].name
+          output[students[i].class].score = students[i].score
         }
-        
+  
+  
+  
+  
+      } else {  //bila tidak ada key yang sama, buat objek baru di dalam object output
+  
+        output[students[i].class] = {
+          name: students[i].name,
+          score: students[i].score
+        }
+  
+      }
+  
     }
-
+  
     return output
-
+  
   }
   
   // TEST CASE
@@ -90,3 +103,5 @@ function highestScore (students) {
   
   
   console.log(highestScore([])); //{}
+
+  //Arjuna Sarumpaet
