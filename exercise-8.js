@@ -1,7 +1,7 @@
 function cariPelaku(str) {
     // you can only write your code here!
 
-    strMod = str.match(/abc{1}/g, '')
+    strMod = str.match(/abc{1}/g)
 
     return strMod.length
 
